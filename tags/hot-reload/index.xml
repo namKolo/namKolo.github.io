@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Peace in Mind</title>
-    <link>http://namkolo.github.io/</link>
-    <description>Recent content on Peace in Mind</description>
+    <title>Hot Reload on Peace in Mind</title>
+    <link>http://namkolo.github.io/tags/hot-reload/</link>
+    <description>Recent content in Hot Reload on Peace in Mind</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 13 Oct 2017 22:50:27 +0700</lastBuildDate>
     
-	<atom:link href="http://namkolo.github.io/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://namkolo.github.io/tags/hot-reload/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>

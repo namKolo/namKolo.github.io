@@ -8,7 +8,30 @@
   </url>
   
   <url>
+    <loc>http://namkolo.github.io/archives/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>http://namkolo.github.io/categories/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://namkolo.github.io/tags/frontend/</loc>
+    <lastmod>2017-10-13T22:50:27+07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://namkolo.github.io/categories/frontend/</loc>
+    <lastmod>2017-10-13T22:50:27+07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://namkolo.github.io/tags/hot-reload/</loc>
+    <lastmod>2017-10-13T22:50:27+07:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -26,6 +49,13 @@
   
   <url>
     <loc>http://namkolo.github.io/tags/</loc>
+    <lastmod>2017-10-13T22:50:27+07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://namkolo.github.io/tags/webpack/</loc>
+    <lastmod>2017-10-13T22:50:27+07:00</lastmod>
     <priority>0</priority>
   </url>
   

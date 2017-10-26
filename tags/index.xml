@@ -1,15 +1,42 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Tags on Life is Thinking</title>
+    <title>Tags on Peace in Mind</title>
     <link>http://namkolo.github.io/tags/</link>
-    <description>Recent content in Tags on Life is Thinking</description>
+    <description>Recent content in Tags on Peace in Mind</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>Code released under the Apache 2.0 license.</copyright>
+    <lastBuildDate>Fri, 13 Oct 2017 22:50:27 +0700</lastBuildDate>
     
 	<atom:link href="http://namkolo.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Frontend</title>
+      <link>http://namkolo.github.io/tags/frontend/</link>
+      <pubDate>Fri, 13 Oct 2017 22:50:27 +0700</pubDate>
+      
+      <guid>http://namkolo.github.io/tags/frontend/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Hot Reload</title>
+      <link>http://namkolo.github.io/tags/hot-reload/</link>
+      <pubDate>Fri, 13 Oct 2017 22:50:27 +0700</pubDate>
+      
+      <guid>http://namkolo.github.io/tags/hot-reload/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Webpack</title>
+      <link>http://namkolo.github.io/tags/webpack/</link>
+      <pubDate>Fri, 13 Oct 2017 22:50:27 +0700</pubDate>
+      
+      <guid>http://namkolo.github.io/tags/webpack/</guid>
+      <description></description>
+    </item>
     
   </channel>
 </rss>

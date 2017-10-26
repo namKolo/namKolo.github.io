@@ -1,19 +1,7 @@
-.profile {
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  overflow: hidden;
+.cover-wrapper {
 }
 
-.flex {
-  display: flex;
-}
-
-.center {
-  align-items: center;
-  justify-content: center;
-}
-
-.custom-nav-bar {
-  top: 0px !important;
+.cover-overlay {
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.2);
 }
