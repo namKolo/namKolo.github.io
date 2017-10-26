@@ -1,0 +1,19 @@
+.profile {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.flex {
+  display: flex;
+}
+
+.center {
+  align-items: center;
+  justify-content: center;
+}
+
+.custom-nav-bar {
+  top: 0px !important;
+}
