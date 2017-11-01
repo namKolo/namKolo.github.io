@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Frontend on Peace in Mind</title>
-    <link>https://namkolo.github.io/tags/frontend/</link>
-    <description>Recent content in Frontend on Peace in Mind</description>
+    <title>Draftjs on Peace in Mind</title>
+    <link>https://namkolo.github.io/tags/draftjs/</link>
+    <description>Recent content in Draftjs on Peace in Mind</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 01 Nov 2017 18:46:03 +0700</lastBuildDate>
     
-	<atom:link href="https://namkolo.github.io/tags/frontend/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://namkolo.github.io/tags/draftjs/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -18,15 +18,6 @@
       
       <guid>https://namkolo.github.io/posts/draftjs-tutorial/</guid>
       <description>One week ago, I had to implement Rich Text editor as one of features in my school project. After searching, I found draft-js. It supports react very well. It looked so cool. So I decided to integrate it to my project. During that integration and studying, I struggled lots - from setting a simple editor to add more advanced features for it. It was a really amazing journey to acknowledge myself.</description>
-    </item>
-    
-    <item>
-      <title>Setup react-hot-loader with Express</title>
-      <link>https://namkolo.github.io/posts/fe-hmr/</link>
-      <pubDate>Fri, 13 Oct 2017 22:50:27 +0700</pubDate>
-      
-      <guid>https://namkolo.github.io/posts/fe-hmr/</guid>
-      <description> Introduction What we will cover Go ahead </description>
     </item>
     
   </channel>

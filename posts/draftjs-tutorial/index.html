@@ -20,7 +20,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="Hugo 0.29 with theme Tranquilpeak 0.4.1-BETA">
-    <title>Setup react-hot-loader with Express</title>
+    <title>Challenge with Draft JS</title>
     <meta name="author" content="Nam Kolo">
     <meta name="keywords" content="">
 
@@ -28,15 +28,15 @@
     
 
     
-    <meta name="description" content=" Introduction What we will cover Go ahead ">
-    <meta property="og:description" content=" Introduction What we will cover Go ahead ">
+    <meta name="description" content="One week ago, I had to implement Rich Text editor as one of features in my school project. After searching, I found draft-js. It supports react very well. It looked so cool. So I decided to integrate it to my project. During that integration and studying, I struggled lots - from setting a simple editor to add more advanced features for it. It was a really amazing journey to acknowledge myself.">
+    <meta property="og:description" content="One week ago, I had to implement Rich Text editor as one of features in my school project. After searching, I found draft-js. It supports react very well. It looked so cool. So I decided to integrate it to my project. During that integration and studying, I struggled lots - from setting a simple editor to add more advanced features for it. It was a really amazing journey to acknowledge myself.">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="Setup react-hot-loader with Express">
-    <meta property="og:url" content="/posts/fe-hmr/">
+    <meta property="og:title" content="Challenge with Draft JS">
+    <meta property="og:url" content="/posts/draftjs-tutorial/">
     <meta property="og:site_name" content="Peace in Mind">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="Peace in Mind">
-    <meta name="twitter:description" content=" Introduction What we will cover Go ahead ">
+    <meta name="twitter:description" content="One week ago, I had to implement Rich Text editor as one of features in my school project. After searching, I found draft-js. It supports react very well. It looked so cool. So I decided to integrate it to my project. During that integration and studying, I struggled lots - from setting a simple editor to add more advanced features for it. It was a really amazing journey to acknowledge myself.">
     
     
 
@@ -205,15 +205,15 @@
             <div class="post-header main-content-wrap text-left">
   
     <h1 class="post-title" itemprop="headline">
-      Setup react-hot-loader with Express
+      Challenge with Draft JS
     </h1>
   
   
   <div class="postShorten-meta post-meta">
     
-      <time itemprop="datePublished" datetime="2017-10-13T22:50:27&#43;07:00">
+      <time itemprop="datePublished" datetime="2017-11-01T18:46:03&#43;07:00">
         
-  October 13, 2017
+  November 1, 2017
 
       </time>
     
@@ -235,11 +235,116 @@
             <div class="main-content-wrap">
               
 
-<h4 id="introduction">Introduction</h4>
+<p>One week ago, I had to implement Rich Text editor as one of features in my school project.  After searching, I found <a href="https://draftjs.org/docs/overview.html#content">draft-js</a>. It supports
+<code>react</code> very well. It looked so cool. So I decided to integrate it to my project. During that integration and studying, I struggled  lots - from setting a simple editor to add more advanced features for it. It was a really amazing journey to acknowledge myself.</p>
 
-<h4 id="what-we-will-cover">What we will cover</h4>
+<p>Therefore I want to write down that journey in this series.</p>
 
-<h4 id="go-ahead">Go ahead</h4>
+<p>Let &rsquo;s start.</p>
+
+<h4 id="first-steps-setup-simple-editor">First steps - Setup simple editor</h4>
+
+<h5 id="goals">Goals</h5>
+
+<ul class="task-list">
+<li><label><input type="checkbox" checked disabled class="task-list-item"> Setup a simple editor by <code>draft-js</code> (just for writing)</label></li>
+<li><label><input type="checkbox" checked disabled class="task-list-item"> How to get content from editor and send it to DB ?</label></li>
+<li><label><input type="checkbox" checked disabled class="task-list-item"> How to add basic keybindings like <code>cmd+b</code>, <code>cmd+i</code>, &hellip; ?</label></li>
+</ul>
+
+<h5 id="progress">Progress</h5>
+
+<p>To be quick, I used <code>create-react-app</code> to bootstrap the demo app. I read <a href="https://github.com/facebookincubator/create-react-app">here</a> to know how to install it</p>
+
+<pre><code>  $ create-react-app editor-by-draftjs
+  $ cd editor-by-draftjs
+</code></pre>
+
+<p>After deps installing finished, I ran below command to make sure It work.</p>
+
+<pre><code>  $ npm run start
+</code></pre>
+
+<p>The app magically automatically opened browser with  <code>http://localhost:3000</code>. At here, I saw the first UI of app</p>
+
+<p>Everything was good until now. I decided to install <code>draft-js</code></p>
+
+<pre><code>  $ npm i draft-js --save
+</code></pre>
+
+<p>Then I opened my favorite editor - <code>atom</code>, I created new package at <code>src/Editor/</code>.
+My editor code was put here.</p>
+
+<pre><code>  src
+    | Editor
+       - Editor.js
+       - index.js
+</code></pre>
+
+<p>I put below code into <code>Editor.js</code></p>
+
+<pre><code class="language-:::react">  // Editor.js
+  /*
+    import draft style
+  */
+  import 'draft-js/dist/Draft.css';
+  import React, { Component } from react;
+  import {
+    Editor,
+    EditorState
+  } from 'draft-js';
+
+  export default class MyEditor extends Component {
+    state = {
+      editorState: EditorState.createEmpty()
+    }
+
+    handleEditorStateChange = (editorState) =&gt;  {
+      this.setState({ editorState });
+    }
+
+    render() {
+      return (
+        &lt;Editor
+          editorState={this.state.editorState}
+          onChange={this.handleEditorStateChange}
+          placeholder=&quot;Tell something you like&quot;
+        /&gt;
+      )
+    }
+
+  }
+</code></pre>
+
+<p>Then I exported to <code>src/Editor/index.js</code></p>
+
+<pre><code>  // index.js
+  export { default } from './Editor'
+</code></pre>
+
+<p>Then I included it into src/App.js</p>
+
+<pre><code>  // src/App.js
+  ....
+  render() {
+    return (
+      ....
+        &lt;Editor /&gt;
+      ....
+    )
+  }
+  ....
+
+</code></pre>
+
+<p>Tada. Finally, I did it. Simple editor was added.</p>
+
+<p><strong><em>Complete</em></strong></p>
+
+<pre><code>  Setup a simple editor by `draft-js` (just for writing)
+</code></pre>
+
+<p>(to be continued&hellip;)</p>
 
               
             </div>
@@ -254,9 +359,7 @@
                     
   <a class="tag tag--primary tag--small" href="https://namkolo.github.io//tags/frontend/">frontend</a>
 
-  <a class="tag tag--primary tag--small" href="https://namkolo.github.io//tags/hot-reload/">hot reload</a>
-
-  <a class="tag tag--primary tag--small" href="https://namkolo.github.io//tags/webpack/">webpack</a>
+  <a class="tag tag--primary tag--small" href="https://namkolo.github.io//tags/draftjs/">draftjs</a>
 
                   </div>
                 
@@ -268,7 +371,7 @@
         <ul class="post-actions post-action-nav">
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://namkolo.github.io/posts/draftjs-tutorial/" data-tooltip="Challenge with Draft JS">
+                <a class="post-action-btn btn btn--disabled">
               
                 <i class="fa fa-angle-left"></i>
                 <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
@@ -276,7 +379,7 @@
             </li>
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--disabled">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://namkolo.github.io/posts/fe-hmr/" data-tooltip="Setup react-hot-loader with Express">
               
                 <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
                 <i class="fa fa-angle-right"></i>
@@ -293,19 +396,19 @@
         </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://namkolo.github.io/posts/fe-hmr/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://namkolo.github.io/posts/draftjs-tutorial/">
               <i class="fa fa-facebook-official"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://namkolo.github.io/posts/fe-hmr/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://namkolo.github.io/posts/draftjs-tutorial/">
               <i class="fa fa-twitter"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://namkolo.github.io/posts/fe-hmr/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://namkolo.github.io/posts/draftjs-tutorial/">
               <i class="fa fa-google-plus"></i>
             </a>
           </li>
@@ -352,7 +455,7 @@
         <ul class="post-actions post-action-nav">
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://namkolo.github.io/posts/draftjs-tutorial/" data-tooltip="Challenge with Draft JS">
+                <a class="post-action-btn btn btn--disabled">
               
                 <i class="fa fa-angle-left"></i>
                 <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
@@ -360,7 +463,7 @@
             </li>
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--disabled">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://namkolo.github.io/posts/fe-hmr/" data-tooltip="Setup react-hot-loader with Express">
               
                 <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
                 <i class="fa fa-angle-right"></i>
@@ -377,19 +480,19 @@
         </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://namkolo.github.io/posts/fe-hmr/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://namkolo.github.io/posts/draftjs-tutorial/">
               <i class="fa fa-facebook-official"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://namkolo.github.io/posts/fe-hmr/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://namkolo.github.io/posts/draftjs-tutorial/">
               <i class="fa fa-twitter"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://namkolo.github.io/posts/fe-hmr/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://namkolo.github.io/posts/draftjs-tutorial/">
               <i class="fa fa-google-plus"></i>
             </a>
           </li>
@@ -419,19 +522,19 @@
   <ul class="share-options">
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fnamkolo.github.io%2Fposts%2Ffe-hmr%2F">
+        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fnamkolo.github.io%2Fposts%2Fdraftjs-tutorial%2F">
           <i class="fa fa-facebook-official"></i><span>Share on Facebook</span>
         </a>
       </li>
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3A%2F%2Fnamkolo.github.io%2Fposts%2Ffe-hmr%2F">
+        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3A%2F%2Fnamkolo.github.io%2Fposts%2Fdraftjs-tutorial%2F">
           <i class="fa fa-twitter"></i><span>Share on Twitter</span>
         </a>
       </li>
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3A%2F%2Fnamkolo.github.io%2Fposts%2Ffe-hmr%2F">
+        <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3A%2F%2Fnamkolo.github.io%2Fposts%2Fdraftjs-tutorial%2F">
           <i class="fa fa-google-plus"></i><span>Share on Google&#43;</span>
         </a>
       </li>
@@ -537,9 +640,9 @@ $(document).ready(function() {
     
       <script>
         var disqus_config = function () {
-          this.page.url = 'https:\/\/namkolo.github.io\/posts\/fe-hmr\/';
+          this.page.url = 'https:\/\/namkolo.github.io\/posts\/draftjs-tutorial\/';
           
-            this.page.identifier = '\/posts\/fe-hmr\/'
+            this.page.identifier = '\/posts\/draftjs-tutorial\/'
           
         };
         (function() {
