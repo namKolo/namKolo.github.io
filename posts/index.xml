@@ -17,7 +17,7 @@
       <pubDate>Wed, 01 Nov 2017 18:46:03 +0700</pubDate>
       
       <guid>https://namkolo.github.io/posts/draftjs-tutorial/</guid>
-      <description>One week ago, I had to implement Rich Text editor as one of features in my side project. After searching, I found draft-js. It supports react very well. It looked so cool. So I decided to integrate it to my project. During that integration and studying, I struggled lots - from setting a simple editor to add more advanced features for it. It was a really amazing journey to acknowledge myself.</description>
+      <description>One week ago, I had to implement Rich Text editor as one of features in my side project. After searching, I found draft-js. It supported react very well. It looked so cool. So I decided to integrate it with my project. During that integration and studying, I struggled lots - from setting a simple editor to adding more advanced features for it. It was a really amazing journey to acknowledge myself.</description>
     </item>
     
     <item>
