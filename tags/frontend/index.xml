@@ -6,17 +6,27 @@
     <description>Recent content in Frontend on Peace in Mind</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 01 Nov 2017 18:46:03 +0700</lastBuildDate>
+    <lastBuildDate>Thu, 02 Nov 2017 18:46:06 +0700</lastBuildDate>
     
 	<atom:link href="https://namkolo.github.io/tags/frontend/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>Challenge With Draft JS (Part 2)</title>
+      <link>https://namkolo.github.io/posts/challenge-with-draftjs-part-2/</link>
+      <pubDate>Thu, 02 Nov 2017 18:46:06 +0700</pubDate>
+      
+      <guid>https://namkolo.github.io/posts/challenge-with-draftjs-part-2/</guid>
+      <description>In the part 1, I wrote about how to set up simple editor with draft-js. But it was not the end, I had to do more. My side project needed the editor with below features:
+ Change text color Change font size / font family Support drag and drop images Emoji/Hashtag  Hmmm, I searched lots about those features on google. Lots of good library built on top draft-js supported them.</description>
+    </item>
+    
+    <item>
       <title>Challenge with Draft JS</title>
-      <link>https://namkolo.github.io/posts/draftjs-tutorial/</link>
+      <link>https://namkolo.github.io/posts/challenge-with-draftjs-part-1/</link>
       <pubDate>Wed, 01 Nov 2017 18:46:03 +0700</pubDate>
       
-      <guid>https://namkolo.github.io/posts/draftjs-tutorial/</guid>
+      <guid>https://namkolo.github.io/posts/challenge-with-draftjs-part-1/</guid>
       <description>One week ago, I had to implement Rich Text editor as one of features in my side project. After searching, I found draft-js which supported react very well. It looked so cool. So I decided to integrate it with my project. During that integration and studying, I struggled lots - from setting a simple editor to adding more advanced features for it. It was a really amazing journey to acknowledge myself.</description>
     </item>
     

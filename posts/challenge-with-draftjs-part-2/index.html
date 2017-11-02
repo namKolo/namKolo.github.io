@@ -20,7 +20,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="Hugo 0.29 with theme Tranquilpeak 0.4.1-BETA">
-    <title>Setup react-hot-loader with Express</title>
+    <title>Challenge With Draft JS (Part 2)</title>
     <meta name="author" content="Nam Kolo">
     <meta name="keywords" content="">
 
@@ -28,15 +28,18 @@
     
 
     
-    <meta name="description" content=" Introduction What we will cover Go ahead ">
-    <meta property="og:description" content=" Introduction What we will cover Go ahead ">
+    <meta name="description" content="In the part 1, I wrote about how to set up simple editor with draft-js. But it was not the end, I had to do more. My side project needed the editor with below features:
+ Change text color Change font size / font family Support drag and drop images Emoji/Hashtag  Hmmm, I searched lots about those features on google. Lots of good library built on top draft-js supported them.">
+    <meta property="og:description" content="In the part 1, I wrote about how to set up simple editor with draft-js. But it was not the end, I had to do more. My side project needed the editor with below features:
+ Change text color Change font size / font family Support drag and drop images Emoji/Hashtag  Hmmm, I searched lots about those features on google. Lots of good library built on top draft-js supported them.">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="Setup react-hot-loader with Express">
-    <meta property="og:url" content="/posts/fe-hmr/">
+    <meta property="og:title" content="Challenge With Draft JS (Part 2)">
+    <meta property="og:url" content="/posts/challenge-with-draftjs-part-2/">
     <meta property="og:site_name" content="Peace in Mind">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="Peace in Mind">
-    <meta name="twitter:description" content=" Introduction What we will cover Go ahead ">
+    <meta name="twitter:description" content="In the part 1, I wrote about how to set up simple editor with draft-js. But it was not the end, I had to do more. My side project needed the editor with below features:
+ Change text color Change font size / font family Support drag and drop images Emoji/Hashtag  Hmmm, I searched lots about those features on google. Lots of good library built on top draft-js supported them.">
     
     
 
@@ -205,15 +208,15 @@
             <div class="post-header main-content-wrap text-left">
   
     <h1 class="post-title" itemprop="headline">
-      Setup react-hot-loader with Express
+      Challenge With Draft JS (Part 2)
     </h1>
   
   
   <div class="postShorten-meta post-meta">
     
-      <time itemprop="datePublished" datetime="2017-10-13T22:50:27&#43;07:00">
+      <time itemprop="datePublished" datetime="2017-11-02T18:46:06&#43;07:00">
         
-  October 13, 2017
+  November 2, 2017
 
       </time>
     
@@ -235,11 +238,75 @@
             <div class="main-content-wrap">
               
 
-<h4 id="introduction">Introduction</h4>
+<p>In the <a href="https://namkolo.github.io/posts/challenge-with-draftjs/">part 1</a>, I wrote about how to set up simple editor with <code>draft-js</code>.
+But it was not the end, I had to do more. My side project needed the editor with below features:</p>
 
-<h4 id="what-we-will-cover">What we will cover</h4>
+<ul>
+<li>Change text color</li>
+<li>Change font size / font family</li>
+<li>Support drag and drop images</li>
+<li>Emoji/Hashtag</li>
+</ul>
 
-<h4 id="go-ahead">Go ahead</h4>
+<p>Hmmm, I searched lots about those features on google. Lots of good library built on top <code>draft-js</code> supported them. It was still ok for me to use those libs even I didn&rsquo;t know
+what happened behind them. But actually, I felt annoying when doing something that I didn&rsquo;t understand. Then I tried to study how to build something like it.
+I wonder what I should start now. Hmm after thinking, I decided to figure how <code>draft-js</code> structure their state.</p>
+
+<h3 id="second-phase-go-deeper">Second Phase - Go deeper</h3>
+
+<p><img src="https://cldup.com/YWX8hpjIAH-2000x2000.png" alt="Internal" /></p>
+
+<p>In a nutshell, I found:</p>
+
+<h6 id="editorstate">EditorState</h6>
+
+<p>It is an Immutable Record that represents the entire state of a Draft editor, including:</p>
+
+<ul>
+<li>The <strong><em>current text content state</em></strong></li>
+<li>The current selection state</li>
+<li>The fully decorated representation of the contents</li>
+<li>Undo/redo stacks</li>
+<li>The most recent type of change made to the contents</li>
+</ul>
+
+<h6 id="contentstate">ContentState</h6>
+
+<p>It is an Immutable Record that represents the full state of:</p>
+
+<ul>
+<li>The <strong><em>entire contents of an editor</em></strong>: text, block and inline styles, and entity ranges.</li>
+<li>Two selection states of an editor: before and after the rendering of these contents.</li>
+</ul>
+
+<h6 id="contentblock">ContentBlock</h6>
+
+<p>A block is analogous to a single line of data w/o newline(i.e could be a long wrapped line or a paragraph). And since there can be multiple blocks or lines of data, they are represented in an array called “blocks”.</p>
+
+<p>It is an Immutable Record that represents the full state of a single block of editor content, including:</p>
+
+<ul>
+<li>Plain text contents of the block</li>
+<li>Type, e.g. paragraph, header, list item</li>
+<li>Entity, inline style, and depth information</li>
+</ul>
+
+<p>Tada, <code>inline style</code>, <code>entity</code> were the keys for my features. <code>Color</code>, <code>Font size</code>, <code>Font family</code> can be toggled by <code>inline style</code> through methods of <code>ContentBlock</code>. So what is <code>entity</code></p>
+
+<blockquote>
+<p>Entities enable engineers to introduce levels of richness beyond styled text to their editors. Links, mentions, and embedded content can all be implemented using entities.</p>
+</blockquote>
+
+<p>Wow, i found it. The key here is <code>Entity</code>.</p>
+
+<p>So the questions I needed to answer were:</p>
+
+<ul>
+<li>How to construct <code>Entity</code>? How many kinds of <code>Entity</code> draft-js support</li>
+<li>How to add own <code>Entity</code> to <code>ContentState</code></li>
+</ul>
+
+<p>Hmmm too late to write more. Next part will come soon.</p>
 
               
             </div>
@@ -254,9 +321,7 @@
                     
   <a class="tag tag--primary tag--small" href="https://namkolo.github.io//tags/frontend/">frontend</a>
 
-  <a class="tag tag--primary tag--small" href="https://namkolo.github.io//tags/hot-reload/">hot reload</a>
-
-  <a class="tag tag--primary tag--small" href="https://namkolo.github.io//tags/webpack/">webpack</a>
+  <a class="tag tag--primary tag--small" href="https://namkolo.github.io//tags/draftjs/">draftjs</a>
 
                   </div>
                 
@@ -268,7 +333,7 @@
         <ul class="post-actions post-action-nav">
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://namkolo.github.io/posts/challenge-with-draftjs-part-1/" data-tooltip="Challenge with Draft JS">
+                <a class="post-action-btn btn btn--disabled">
               
                 <i class="fa fa-angle-left"></i>
                 <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
@@ -276,7 +341,7 @@
             </li>
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--disabled">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://namkolo.github.io/posts/challenge-with-draftjs-part-1/" data-tooltip="Challenge with Draft JS">
               
                 <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
                 <i class="fa fa-angle-right"></i>
@@ -293,19 +358,19 @@
         </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://namkolo.github.io/posts/fe-hmr/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://namkolo.github.io/posts/challenge-with-draftjs-part-2/">
               <i class="fa fa-facebook-official"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://namkolo.github.io/posts/fe-hmr/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://namkolo.github.io/posts/challenge-with-draftjs-part-2/">
               <i class="fa fa-twitter"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://namkolo.github.io/posts/fe-hmr/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://namkolo.github.io/posts/challenge-with-draftjs-part-2/">
               <i class="fa fa-google-plus"></i>
             </a>
           </li>
@@ -352,7 +417,7 @@
         <ul class="post-actions post-action-nav">
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://namkolo.github.io/posts/challenge-with-draftjs-part-1/" data-tooltip="Challenge with Draft JS">
+                <a class="post-action-btn btn btn--disabled">
               
                 <i class="fa fa-angle-left"></i>
                 <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
@@ -360,7 +425,7 @@
             </li>
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--disabled">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://namkolo.github.io/posts/challenge-with-draftjs-part-1/" data-tooltip="Challenge with Draft JS">
               
                 <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
                 <i class="fa fa-angle-right"></i>
@@ -377,19 +442,19 @@
         </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://namkolo.github.io/posts/fe-hmr/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://namkolo.github.io/posts/challenge-with-draftjs-part-2/">
               <i class="fa fa-facebook-official"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://namkolo.github.io/posts/fe-hmr/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://namkolo.github.io/posts/challenge-with-draftjs-part-2/">
               <i class="fa fa-twitter"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://namkolo.github.io/posts/fe-hmr/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://namkolo.github.io/posts/challenge-with-draftjs-part-2/">
               <i class="fa fa-google-plus"></i>
             </a>
           </li>
@@ -419,19 +484,19 @@
   <ul class="share-options">
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fnamkolo.github.io%2Fposts%2Ffe-hmr%2F">
+        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fnamkolo.github.io%2Fposts%2Fchallenge-with-draftjs-part-2%2F">
           <i class="fa fa-facebook-official"></i><span>Share on Facebook</span>
         </a>
       </li>
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3A%2F%2Fnamkolo.github.io%2Fposts%2Ffe-hmr%2F">
+        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3A%2F%2Fnamkolo.github.io%2Fposts%2Fchallenge-with-draftjs-part-2%2F">
           <i class="fa fa-twitter"></i><span>Share on Twitter</span>
         </a>
       </li>
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3A%2F%2Fnamkolo.github.io%2Fposts%2Ffe-hmr%2F">
+        <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3A%2F%2Fnamkolo.github.io%2Fposts%2Fchallenge-with-draftjs-part-2%2F">
           <i class="fa fa-google-plus"></i><span>Share on Google&#43;</span>
         </a>
       </li>
@@ -537,9 +602,9 @@ $(document).ready(function() {
     
       <script>
         var disqus_config = function () {
-          this.page.url = 'https:\/\/namkolo.github.io\/posts\/fe-hmr\/';
+          this.page.url = 'https:\/\/namkolo.github.io\/posts\/challenge-with-draftjs-part-2\/';
           
-            this.page.identifier = '\/posts\/fe-hmr\/'
+            this.page.identifier = '\/posts\/challenge-with-draftjs-part-2\/'
           
         };
         (function() {
