@@ -28,15 +28,15 @@
     
 
     
-    <meta name="description" content="One week ago, I had to implement Rich Text editor as one of features in my side project. After searching, I found draft-js. It supported react very well. It looked so cool. So I decided to integrate it with my project. During that integration and studying, I struggled lots - from setting a simple editor to adding more advanced features for it. It was a really amazing journey to acknowledge myself.">
-    <meta property="og:description" content="One week ago, I had to implement Rich Text editor as one of features in my side project. After searching, I found draft-js. It supported react very well. It looked so cool. So I decided to integrate it with my project. During that integration and studying, I struggled lots - from setting a simple editor to adding more advanced features for it. It was a really amazing journey to acknowledge myself.">
+    <meta name="description" content="One week ago, I had to implement Rich Text editor as one of features in my side project. After searching, I found draft-js which supported react very well. It looked so cool. So I decided to integrate it with my project. During that integration and studying, I struggled lots - from setting a simple editor to adding more advanced features for it. It was a really amazing journey to acknowledge myself.">
+    <meta property="og:description" content="One week ago, I had to implement Rich Text editor as one of features in my side project. After searching, I found draft-js which supported react very well. It looked so cool. So I decided to integrate it with my project. During that integration and studying, I struggled lots - from setting a simple editor to adding more advanced features for it. It was a really amazing journey to acknowledge myself.">
     <meta property="og:type" content="blog">
     <meta property="og:title" content="Challenge with Draft JS">
     <meta property="og:url" content="/posts/draftjs-tutorial/">
     <meta property="og:site_name" content="Peace in Mind">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="Peace in Mind">
-    <meta name="twitter:description" content="One week ago, I had to implement Rich Text editor as one of features in my side project. After searching, I found draft-js. It supported react very well. It looked so cool. So I decided to integrate it with my project. During that integration and studying, I struggled lots - from setting a simple editor to adding more advanced features for it. It was a really amazing journey to acknowledge myself.">
+    <meta name="twitter:description" content="One week ago, I had to implement Rich Text editor as one of features in my side project. After searching, I found draft-js which supported react very well. It looked so cool. So I decided to integrate it with my project. During that integration and studying, I struggled lots - from setting a simple editor to adding more advanced features for it. It was a really amazing journey to acknowledge myself.">
     
     
 
@@ -235,7 +235,7 @@
             <div class="main-content-wrap">
               
 
-<p>One week ago, I had to implement Rich Text editor as one of features in my side project.  After searching, I found <a href="https://draftjs.org/docs/overview.html#content">draft-js</a>. It supported
+<p>One week ago, I had to implement Rich Text editor as one of features in my side project.  After searching, I found <a href="https://draftjs.org/docs/overview.html#content">draft-js</a> which supported
 <code>react</code> very well. It looked so cool. So I decided to integrate it with my project. During that integration and studying, I struggled  lots - from setting a simple editor to adding more advanced features for it. It was a really amazing journey to acknowledge myself.</p>
 
 <p>Therefore I want to write down that journey in this series.</p>
@@ -339,12 +339,32 @@ My editor code was put here.</p>
 
 <p>Tada. Finally, I did it. Simple editor was added.</p>
 
-<p><strong><em>Complete</em></strong></p>
+<p><strong><em>Goal Completed</em></strong></p>
 
 <pre><code>  Setup a simple editor by `draft-js` (just for writing)
 </code></pre>
 
-<p>(to be continued&hellip;)</p>
+<p>I wondered how to persist the content to db. Hmm, after reading the documentation, I got 2 methods to do that <code>getCurrentContent</code> &amp; <code>convertToRaw</code></p>
+
+<pre><code>  rawObj = convertToRaw(editorState.getCurrentContent())
+</code></pre>
+
+<p><code>rawObj</code> was a raw javascript object. With it, I could easily to save it to DB.
+(Btw there were still another ways to do that. I tried to parse it to <code>markup</code> or <code>html</code> before saving it to db by using <a href="https://github.com/sstur/draft-js-utils">draft-js-utils</a>.)</p>
+
+<p>But how to parse it again for Editor. Hmm, yah tada, i found <code>convertFromRaw</code>. With this method, I easily constructed the <code>ContentState</code> from <code>rawObj</code>. Then I used <code>EditorState.createWithContent</code> to construct <code>editorState</code></p>
+
+<pre><code>  editorState = EditorState.createWithContent(convertFromRaw(rawObj))
+</code></pre>
+
+<p><strong><em>Goal Completed</em></strong></p>
+
+<pre><code>   How to get content from editor and send it to DB ?
+</code></pre>
+
+<p>Hmm It was cool until now. But when I press <code>cmd+b</code> or <code>cmd+i</code>, nothing happened. Hmmm I thought those keys would be automatically bind, but it was not. So I tried to figure out the way to do that.</p>
+
+<p>Tada, <code>draft-js</code> supported us to do it by <code>keyBindingFn</code> and <code>handleKeyCommand</code>. This was <code>draft-js</code> &rsquo;s documentation about it.</p>
 
               
             </div>

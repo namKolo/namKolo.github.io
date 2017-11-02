@@ -6,10 +6,19 @@
     <description>Recent content on Peace in Mind</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 13 Oct 2017 22:50:27 +0700</lastBuildDate>
+    <lastBuildDate>Wed, 01 Nov 2017 18:46:03 +0700</lastBuildDate>
     
 	<atom:link href="https://namkolo.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Challenge with Draft JS</title>
+      <link>https://namkolo.github.io/posts/draftjs-tutorial/</link>
+      <pubDate>Wed, 01 Nov 2017 18:46:03 +0700</pubDate>
+      
+      <guid>https://namkolo.github.io/posts/draftjs-tutorial/</guid>
+      <description>One week ago, I had to implement Rich Text editor as one of features in my side project. After searching, I found draft-js which supported react very well. It looked so cool. So I decided to integrate it with my project. During that integration and studying, I struggled lots - from setting a simple editor to adding more advanced features for it. It was a really amazing journey to acknowledge myself.</description>
+    </item>
     
     <item>
       <title>Setup react-hot-loader with Express</title>
