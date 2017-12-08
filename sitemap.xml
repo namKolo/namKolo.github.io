@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://namkolo.github.io/posts/webpack-configuration/</loc>
+    <lastmod>2017-12-04T14:14:40+07:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://namkolo.github.io/posts/books/</loc>
     <lastmod>2017-11-04T14:14:40+07:00</lastmod>
   </url>
@@ -28,13 +33,13 @@
   </url>
   
   <url>
-    <loc>https://namkolo.github.io/categories/books/</loc>
+    <loc>https://namkolo.github.io/tags/books/</loc>
     <lastmod>2017-11-04T14:14:40+07:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://namkolo.github.io/tags/books/</loc>
+    <loc>https://namkolo.github.io/categories/books/</loc>
     <lastmod>2017-11-04T14:14:40+07:00</lastmod>
     <priority>0</priority>
   </url>
@@ -52,14 +57,14 @@
   </url>
   
   <url>
-    <loc>https://namkolo.github.io/categories/frontend/</loc>
-    <lastmod>2017-11-02T18:46:06+07:00</lastmod>
+    <loc>https://namkolo.github.io/tags/frontend/</loc>
+    <lastmod>2017-12-04T14:14:40+07:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://namkolo.github.io/tags/frontend/</loc>
-    <lastmod>2017-11-02T18:46:06+07:00</lastmod>
+    <loc>https://namkolo.github.io/categories/frontend/</loc>
+    <lastmod>2017-12-04T14:14:40+07:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -83,13 +88,13 @@
   
   <url>
     <loc>https://namkolo.github.io/</loc>
-    <lastmod>2017-11-04T14:14:40+07:00</lastmod>
+    <lastmod>2017-12-04T14:14:40+07:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://namkolo.github.io/posts/</loc>
-    <lastmod>2017-11-04T14:14:40+07:00</lastmod>
+    <lastmod>2017-12-04T14:14:40+07:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -107,7 +112,7 @@
   
   <url>
     <loc>https://namkolo.github.io/tags/webpack/</loc>
-    <lastmod>2017-10-13T22:50:27+07:00</lastmod>
+    <lastmod>2017-12-04T14:14:40+07:00</lastmod>
     <priority>0</priority>
   </url>
   
