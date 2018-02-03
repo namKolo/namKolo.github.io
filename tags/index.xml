@@ -1,67 +1,60 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Tags on Peace in Mind</title>
-    <link>https://namkolo.github.io/tags/</link>
-    <description>Recent content in Tags on Peace in Mind</description>
+    <title>Tags on namkolo &#39;s journey</title>
+    <link>https://example.com/tags/</link>
+    <description>Recent content in Tags on namkolo &#39;s journey</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
+    <managingEditor>your@email.com (Temple Theme)</managingEditor>
+    <webMaster>your@email.com (Temple Theme)</webMaster>
+    <copyright>(c) 2017 - 2018 namkolo -- All rights reserved.</copyright>
     <lastBuildDate>Sat, 04 Nov 2017 14:14:40 +0700</lastBuildDate>
     
-	<atom:link href="https://namkolo.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://example.com/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Books</title>
-      <link>https://namkolo.github.io/tags/books/</link>
+      <link>https://example.com/tags/books/</link>
       <pubDate>Sat, 04 Nov 2017 14:14:40 +0700</pubDate>
-      
-      <guid>https://namkolo.github.io/tags/books/</guid>
+      <author>your@email.com (Temple Theme)</author>
+      <guid>https://example.com/tags/books/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Draftjs</title>
-      <link>https://namkolo.github.io/tags/draftjs/</link>
-      <pubDate>Thu, 02 Nov 2017 18:46:06 +0700</pubDate>
-      
-      <guid>https://namkolo.github.io/tags/draftjs/</guid>
+      <title>Build</title>
+      <link>https://example.com/tags/build/</link>
+      <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
+      <author>your@email.com (Temple Theme)</author>
+      <guid>https://example.com/tags/build/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Development</title>
+      <link>https://example.com/tags/development/</link>
+      <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
+      <author>your@email.com (Temple Theme)</author>
+      <guid>https://example.com/tags/development/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Frontend</title>
-      <link>https://namkolo.github.io/tags/frontend/</link>
-      <pubDate>Mon, 04 Dec 2017 14:14:40 +0700</pubDate>
-      
-      <guid>https://namkolo.github.io/tags/frontend/</guid>
+      <link>https://example.com/tags/frontend/</link>
+      <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
+      <author>your@email.com (Temple Theme)</author>
+      <guid>https://example.com/tags/frontend/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Habit</title>
-      <link>https://namkolo.github.io/tags/habit/</link>
+      <link>https://example.com/tags/habit/</link>
       <pubDate>Sat, 04 Nov 2017 14:14:40 +0700</pubDate>
-      
-      <guid>https://namkolo.github.io/tags/habit/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Hot Reload</title>
-      <link>https://namkolo.github.io/tags/hot-reload/</link>
-      <pubDate>Fri, 13 Oct 2017 22:50:27 +0700</pubDate>
-      
-      <guid>https://namkolo.github.io/tags/hot-reload/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Webpack</title>
-      <link>https://namkolo.github.io/tags/webpack/</link>
-      <pubDate>Mon, 04 Dec 2017 14:14:40 +0700</pubDate>
-      
-      <guid>https://namkolo.github.io/tags/webpack/</guid>
+      <author>your@email.com (Temple Theme)</author>
+      <guid>https://example.com/tags/habit/</guid>
       <description></description>
     </item>
     

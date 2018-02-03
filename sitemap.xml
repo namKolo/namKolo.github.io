@@ -3,116 +3,99 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://namkolo.github.io/posts/webpack-configuration/</loc>
-    <lastmod>2017-12-04T14:14:40+07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://namkolo.github.io/posts/books/</loc>
+    <loc>https://example.com/posts/books/</loc>
     <lastmod>2017-11-04T14:14:40+07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://namkolo.github.io/posts/challenge-with-draftjs-part-2/</loc>
+    <loc>https://example.com/posts/challenge-with-draftjs-part-2/</loc>
     <lastmod>2017-11-02T18:46:06+07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://namkolo.github.io/posts/challenge-with-draftjs-part-1/</loc>
+    <loc>https://example.com/posts/challenge-with-draftjs-part-1/</loc>
     <lastmod>2017-11-01T18:46:03+07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://namkolo.github.io/posts/fe-hmr/</loc>
+    <loc>https://example.com/posts/fe-hmr/</loc>
     <lastmod>2017-10-13T22:50:27+07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://namkolo.github.io/archives/</loc>
-    <priority>0</priority>
+    <loc>https://example.com/posts/webpack-configuration/</loc>
+    <lastmod>2014-04-02T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://namkolo.github.io/tags/books/</loc>
+    <loc>https://example.com/categories/books/</loc>
     <lastmod>2017-11-04T14:14:40+07:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://namkolo.github.io/categories/books/</loc>
+    <loc>https://example.com/tags/books/</loc>
     <lastmod>2017-11-04T14:14:40+07:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://namkolo.github.io/categories/</loc>
+    <loc>https://example.com/tags/build/</loc>
+    <lastmod>2014-04-02T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://example.com/categories/</loc>
     <lastmod>2017-11-04T14:14:40+07:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://namkolo.github.io/tags/draftjs/</loc>
+    <loc>https://example.com/tags/development/</loc>
+    <lastmod>2014-04-02T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://example.com/categories/frontend/</loc>
     <lastmod>2017-11-02T18:46:06+07:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://namkolo.github.io/tags/frontend/</loc>
-    <lastmod>2017-12-04T14:14:40+07:00</lastmod>
+    <loc>https://example.com/tags/frontend/</loc>
+    <lastmod>2014-04-02T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://namkolo.github.io/categories/frontend/</loc>
-    <lastmod>2017-12-04T14:14:40+07:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://namkolo.github.io/tags/habit/</loc>
+    <loc>https://example.com/tags/habit/</loc>
     <lastmod>2017-11-04T14:14:40+07:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://namkolo.github.io/tags/hot-reload/</loc>
-    <lastmod>2017-10-13T22:50:27+07:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://namkolo.github.io/categories/life/</loc>
+    <loc>https://example.com/categories/life/</loc>
     <lastmod>2017-11-04T14:14:40+07:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://namkolo.github.io/</loc>
-    <lastmod>2017-12-04T14:14:40+07:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://namkolo.github.io/posts/</loc>
-    <lastmod>2017-12-04T14:14:40+07:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://namkolo.github.io/tags/</loc>
+    <loc>https://example.com/posts/</loc>
     <lastmod>2017-11-04T14:14:40+07:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://namkolo.github.io/categories/thought/</loc>
+    <loc>https://example.com/tags/</loc>
     <lastmod>2017-11-04T14:14:40+07:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://namkolo.github.io/tags/webpack/</loc>
-    <lastmod>2017-12-04T14:14:40+07:00</lastmod>
+    <loc>https://example.com/</loc>
+    <lastmod>2017-11-04T14:14:40+07:00</lastmod>
     <priority>0</priority>
   </url>
   
