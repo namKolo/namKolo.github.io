@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on namkolo &#39;s journey</title>
-    <link>https://example.com/tags/</link>
+    <link>https://namkolo.github.io/tags/</link>
     <description>Recent content in Tags on namkolo &#39;s journey</description>
     <generator>Hugo -- gohugo.io</generator>
     <managingEditor>your@email.com (Temple Theme)</managingEditor>
@@ -10,51 +10,51 @@
     <copyright>(c) 2017 - 2018 namkolo -- All rights reserved.</copyright>
     <lastBuildDate>Sat, 04 Nov 2017 14:14:40 +0700</lastBuildDate>
     
-	<atom:link href="https://example.com/tags/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://namkolo.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Books</title>
-      <link>https://example.com/tags/books/</link>
+      <link>https://namkolo.github.io/tags/books/</link>
       <pubDate>Sat, 04 Nov 2017 14:14:40 +0700</pubDate>
       <author>your@email.com (Temple Theme)</author>
-      <guid>https://example.com/tags/books/</guid>
+      <guid>https://namkolo.github.io/tags/books/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Build</title>
-      <link>https://example.com/tags/build/</link>
+      <link>https://namkolo.github.io/tags/build/</link>
       <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
       <author>your@email.com (Temple Theme)</author>
-      <guid>https://example.com/tags/build/</guid>
+      <guid>https://namkolo.github.io/tags/build/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Development</title>
-      <link>https://example.com/tags/development/</link>
+      <link>https://namkolo.github.io/tags/development/</link>
       <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
       <author>your@email.com (Temple Theme)</author>
-      <guid>https://example.com/tags/development/</guid>
+      <guid>https://namkolo.github.io/tags/development/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Frontend</title>
-      <link>https://example.com/tags/frontend/</link>
+      <link>https://namkolo.github.io/tags/frontend/</link>
       <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
       <author>your@email.com (Temple Theme)</author>
-      <guid>https://example.com/tags/frontend/</guid>
+      <guid>https://namkolo.github.io/tags/frontend/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Habit</title>
-      <link>https://example.com/tags/habit/</link>
+      <link>https://namkolo.github.io/tags/habit/</link>
       <pubDate>Sat, 04 Nov 2017 14:14:40 +0700</pubDate>
       <author>your@email.com (Temple Theme)</author>
-      <guid>https://example.com/tags/habit/</guid>
+      <guid>https://namkolo.github.io/tags/habit/</guid>
       <description></description>
     </item>
     

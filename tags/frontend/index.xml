@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Frontend on namkolo &#39;s journey</title>
-    <link>https://example.com/tags/frontend/</link>
+    <link>https://namkolo.github.io/tags/frontend/</link>
     <description>Recent content in Frontend on namkolo &#39;s journey</description>
     <generator>Hugo -- gohugo.io</generator>
     <managingEditor>your@email.com (Temple Theme)</managingEditor>
@@ -10,15 +10,15 @@
     <copyright>(c) 2017 - 2018 namkolo -- All rights reserved.</copyright>
     <lastBuildDate>Wed, 02 Apr 2014 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://example.com/tags/frontend/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://namkolo.github.io/tags/frontend/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Webpack configuration</title>
-      <link>https://example.com/posts/webpack-configuration/</link>
+      <link>https://namkolo.github.io/posts/webpack-configuration/</link>
       <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
       <author>your@email.com (Temple Theme)</author>
-      <guid>https://example.com/posts/webpack-configuration/</guid>
+      <guid>https://namkolo.github.io/posts/webpack-configuration/</guid>
       <description>I always wonder how to setup webpack to build a frontend react app from scratch? At the first glance, I felt so terrible about its document. It looks so big !!! Lots of things to do. But anything can be learned by step by step method. So I divided that progress into sub steps that I can follow.
 First step is really simple. Just compile and copy code in src to public/build.</description>
     </item>
