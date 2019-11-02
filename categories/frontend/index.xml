@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Frontend on namkolo &#39;s journey</title>
+    <link>https://namkolo.github.io/categories/frontend/</link>
+    <description>Recent content in Frontend on namkolo &#39;s journey</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <managingEditor>your@email.com (Temple Theme)</managingEditor>
+    <webMaster>your@email.com (Temple Theme)</webMaster>
+    <copyright>(c) 2017 - 2018 namkolo -- All rights reserved.</copyright>
+    <lastBuildDate>Thu, 02 Nov 2017 18:46:06 +0700</lastBuildDate>
+    
+	<atom:link href="https://namkolo.github.io/categories/frontend/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Challenge With Draft JS (Part 2)</title>
+      <link>https://namkolo.github.io/posts/challenge-with-draftjs-part-2/</link>
+      <pubDate>Thu, 02 Nov 2017 18:46:06 +0700</pubDate>
+      <author>your@email.com (Temple Theme)</author>
+      <guid>https://namkolo.github.io/posts/challenge-with-draftjs-part-2/</guid>
+      <description>In the part 1, I wrote about how to set up simple editor with draft-js. But it was not the end, I had to do more. My side project needed the editor with below features:
+ Change text color Change font size / font family Support drag and drop images Emoji/Hashtag  Hmmm, I searched lots about those features on google. Lots of good library built on top draft-js supported them.</description>
+    </item>
+    
+    <item>
+      <title>Challenge with Draft JS (Part 1)</title>
+      <link>https://namkolo.github.io/posts/challenge-with-draftjs-part-1/</link>
+      <pubDate>Wed, 01 Nov 2017 18:46:03 +0700</pubDate>
+      <author>your@email.com (Temple Theme)</author>
+      <guid>https://namkolo.github.io/posts/challenge-with-draftjs-part-1/</guid>
+      <description>One week ago, I had to implement Rich Text editor as one of features in my side project. After searching, I found draft-js which supported react very well. It looked so cool. So I decided to integrate it with my project. During that integration and studying, I struggled lots - from setting a simple editor to adding more advanced features for it. It was a really amazing journey to acknowledge myself.</description>
+    </item>
+    
+    <item>
+      <title>Setup react-hot-loader with Express</title>
+      <link>https://namkolo.github.io/posts/fe-hmr/</link>
+      <pubDate>Fri, 13 Oct 2017 22:50:27 +0700</pubDate>
+      <author>your@email.com (Temple Theme)</author>
+      <guid>https://namkolo.github.io/posts/fe-hmr/</guid>
+      <description> Introduction What we will cover Go ahead </description>
+    </item>
+    
+    <item>
+      <title>Webpack configuration</title>
+      <link>https://namkolo.github.io/posts/webpack-configuration/</link>
+      <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
+      <author>your@email.com (Temple Theme)</author>
+      <guid>https://namkolo.github.io/posts/webpack-configuration/</guid>
+      <description>I always wonder how to setup webpack to build a frontend react app from scratch? At the first glance, I felt so terrible about its document. It looks so big !!! Lots of things to do. But anything can be learned by step by step method. So I divided that progress into sub steps that I can follow.
+First step is really simple. Just compile and copy code in src to public/build.</description>
+    </item>
+    
+  </channel>
+</rss>
